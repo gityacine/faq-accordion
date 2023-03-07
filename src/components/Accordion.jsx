@@ -13,14 +13,15 @@ export default function Accordion(props) {
                                 } h-5 w-5 text-[#f47c57]`} />
                         </Disclosure.Button>
                         <Transition
-                            enter="transition linear duration-200 transform"
-                            enterFrom="-translate-y-4 opacity-50"
+                            show={open}
+                            enter="transition ease-in-out duration-300 transform"
+                            enterFrom="-translate-y-4 opacity-70"
                             enterTo="translate-y-0"
                             leave="transition linear duration-200 transform"
                             leaveFrom="translate-y-0"
                             leaveTo="-translate-y-4 opacity-50"
                         >
-                            <Disclosure.Panel className="text-gray-500 py-2">
+                            <Disclosure.Panel as="div" static className="text-gray-500 py-2">
                                 {props.answer}
                             </Disclosure.Panel>
                         </Transition>
